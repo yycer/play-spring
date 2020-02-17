@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="myTestBean"
+          class="com.frankie.demo.beans.MyTestBean"
+          scope="singleton"
+          abstract="false"
+          autowire="byName"
+          autowire-candidate="false"
+          depends-on="demoApplication"
+          destroy-method="getTest"
+          factory-bean="demoApplication"
+          factory-method="aspectOf"
+          init-method="getTest"
+          lazy-init="true"
+          name="bean"
+          parent="demoApplication"
+          primary="true"
+          xml:base="beanFactoryTest.xml"
+          xml:id="a"
+          xml:lang="ch"
+          xml:space="default"
+          xsi:nil="asd"
+          xsi:noNamespaceSchemaLocation="beanFactoryTest.xml"
+          xsi:schemaLocation="http"
+          xsi:type="collectionType"/>
+
+</beans>
