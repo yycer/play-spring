@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns="http://www.yyc.com/schema/yyc"
-            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-            targetNamespace="http://www.yyc.com/schema/yyc">
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.yyc.com/schema/yyc">
 
-    <xsd:element name="user">
-        <xsd:complexType>
-            <xsd:attribute name="id"   type="xsd:string"/>
-            <xsd:attribute name="name" type="xsd:string"/>
-            <xsd:attribute name="age"  type="xsd:int"/>
-        </xsd:complexType>
-    </xsd:element>
+    <element name="user">
+        <complexType>
+            <attribute name="id"   type="string"/>
+            <attribute name="name" type="string"/>
+            <attribute name="age"  type="int"/>
+        </complexType>
+    </element>
 
-</xsd:schema>
+</schema>

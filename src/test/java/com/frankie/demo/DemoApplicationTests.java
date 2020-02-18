@@ -29,8 +29,7 @@ class DemoApplicationTests {
     public void userDefinedLabelTest(){
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("UserBean.xml");
         User user = (User) context.getBean("userBean");
-        System.out.println("name = " + user.getUserName() + " age = " + user.getAge());
-
+        System.out.println(String.format("name = %s, age = %d", user.getUserName(), user.getAge()));
     }
 
 }
