@@ -3,8 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="myTestBean" class="com.frankie.demo.beans.MyTestBean">
-        <meta key="metaKey" value="metaVal"/>
-    </bean>
-
+    <import resource="PersonBean.xml"/>
+    <import resource="OrderBean.xml"/>
 </beans>

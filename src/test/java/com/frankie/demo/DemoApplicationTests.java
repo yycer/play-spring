@@ -1,12 +1,16 @@
 package com.frankie.demo;
 
 import com.frankie.demo.beans.MyTestBean;
+import com.frankie.demo.beans.ShowMeBean;
 import com.frankie.demo.pojos.Order;
+import com.frankie.demo.pojos.Person;
+import com.frankie.demo.pojos.Programmer;
 import com.frankie.demo.pojos.User;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 
@@ -40,4 +44,31 @@ class DemoApplicationTests {
         System.out.println(order);
     }
 
+    @Test
+    void lookupMethodTest(){
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ShowMeBean.xml");
+        ShowMeBean showMeBean = (ShowMeBean) context.getBean("showMeBean");
+        showMeBean.showMe();
+    }
+
+    @Test
+    void replaceMethodTest(){
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ReplaceMethodBean.xml");
+        Programmer programmer = (Programmer) context.getBean("testReplaceMethod");
+        programmer.showMe();
+    }
+
+    @Test
+    void constructorArgTest(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("PersonBean.xml");
+        Person person = (Person) context.getBean("person");
+        System.out.println(person);
+    }
+
+    @Test
+    void importXmlTest(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("BeanCollection.xml");
+        Person person = (Person) context.getBean("person");
+        System.out.println(person);
+    }
 }

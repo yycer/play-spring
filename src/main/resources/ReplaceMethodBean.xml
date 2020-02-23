@@ -3,8 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="myTestBean" class="com.frankie.demo.beans.MyTestBean">
-        <meta key="metaKey" value="metaVal"/>
+    <bean id="testReplaceMethod" class="com.frankie.demo.pojos.Programmer">
+        <constructor-arg index="0" value="yyc"/>
+        <constructor-arg index="1" value="123"/>
+        <replaced-method name="showMe" replacer="replacer"/>
     </bean>
 
+    <bean id="replacer" class="com.frankie.demo.pojos.Anybody"/>
 </beans>
