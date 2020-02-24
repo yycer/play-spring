@@ -2,10 +2,7 @@ package com.frankie.demo;
 
 import com.frankie.demo.beans.MyTestBean;
 import com.frankie.demo.beans.ShowMeBean;
-import com.frankie.demo.pojos.Order;
-import com.frankie.demo.pojos.Person;
-import com.frankie.demo.pojos.Programmer;
-import com.frankie.demo.pojos.User;
+import com.frankie.demo.pojos.*;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
@@ -40,7 +37,8 @@ class DemoApplicationTests {
     @Test
     void playLabels(){
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("OrderBean.xml");
-        Order order = (Order) context.getBean("order");
+//        Order order = (Order) context.getBean("order");
+        Order order = (Order) context.getBean("myOrder");
         System.out.println(order);
     }
 
@@ -70,5 +68,12 @@ class DemoApplicationTests {
         ApplicationContext context = new ClassPathXmlApplicationContext("BeanCollection.xml");
         Person person = (Person) context.getBean("person");
         System.out.println(person);
+    }
+
+    @Test
+    void factoryBeanTest(){
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("CarBean.xml");
+        Car car = (Car) context.getBean("car");
+        System.out.println(1);
     }
 }
