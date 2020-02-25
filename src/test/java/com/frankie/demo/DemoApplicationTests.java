@@ -44,6 +44,7 @@ class DemoApplicationTests {
 //        Order order = (Order) context.getBean("order");
         Order order = (Order) context.getBean("myOrder");
         System.out.println(order);
+        context.close();
     }
 
     @Test
@@ -116,5 +117,30 @@ class DemoApplicationTests {
 
         System.out.println(parent);
 
+    }
+
+    @Test
+    void primaryTest(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("PrimaryProductBean.xml");
+        Product product = context.getBean(Product.class);
+        System.out.println(product);
+    }
+
+    @Test
+    void factoryMethodTest(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("StudentBean.xml");
+        Student student = (Student) context.getBean("student");
+        System.out.println(student.getName());
+    }
+
+    @Test
+    void parentTest(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("ParentBean.xml");
+        context.getBean("child");
+    }
+
+    @Test
+    void dependsOnTest(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("DependsOnBean.xml");
     }
 }

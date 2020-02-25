@@ -4,19 +4,20 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="order" name="myOrder" class="com.frankie.demo.pojos.Order" autowire="byType">
+    <bean id="order" name="myOrder" class="com.frankie.demo.pojos.Order"
+          init-method="orderInit" destroy-method="orderDestroy" autowire="byName">
         <property name="orderId" value="5c57ccad-1773-4cd3-9c74-2e62507fc3c5"/>
-        <property name="total" value="880.00"/>
-<!--        <property name="product" ref="product"/>-->
+        <property name="total"   value="880.00"/>
+<!--        <property name="product" ref="product2"/>-->
     </bean>
 
     <bean id="product1" name="5X" class="com.frankie.demo.pojos.Product">
-        <property name="name" value="huanshi 5X"/>
+        <property name="name"  value="huanshi 5X"/>
         <property name="price" value="888.00"/>
     </bean>
 
-<!--    <bean id="product2" name="6X" class="com.frankie.demo.pojos.Product">-->
-<!--        <property name="name" value="huanshi 6X"/>-->
-<!--        <property name="price" value="888.66"/>-->
-<!--    </bean>-->
+    <bean id="product" name="6X" class="com.frankie.demo.pojos.Product">
+        <property name="name"  value="huanshi 6X"/>
+        <property name="price" value="888.66"/>
+    </bean>
 </beans>

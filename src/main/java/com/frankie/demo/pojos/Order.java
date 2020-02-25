@@ -14,9 +14,21 @@ public class Order {
     private String  total;
     private Product product;
 
+    public Order(){
+        System.out.println("Started Order().");
+    }
+
     @Override
     public String toString(){
         return String.format("orderId = %s, total = %s, \nproduct: (%s)",
                 orderId, total, product.toString());
+    }
+
+    public void orderInit(){
+        System.out.println("Start orderInit()");
+    }
+
+    public void orderDestroy(){
+        System.out.println("Start orderDestroy()");
     }
 }

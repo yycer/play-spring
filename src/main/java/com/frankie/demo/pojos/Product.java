@@ -13,6 +13,10 @@ public class Product {
     private String name;
     private String price;
 
+    public Product(){
+        System.out.println("Started Product().");
+    }
+
     @Override
     public String toString(){
         return String.format("name = %s, price = %s", name, price);

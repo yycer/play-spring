@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="product1" name="5X" class="com.frankie.demo.pojos.Product">
+        <property name="name" value="huanshi 5X"/>
+        <property name="price" value="888.00"/>
+    </bean>
+
+    <bean id="product2" name="6X" class="com.frankie.demo.pojos.Product" primary="true">
+        <property name="name" value="huanshi 6X"/>
+        <property name="price" value="888.66"/>
+    </bean>
+</beans>
