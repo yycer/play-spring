@@ -11,6 +11,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+
 @SpringBootTest
 class DemoApplicationTests {
 
@@ -75,5 +79,42 @@ class DemoApplicationTests {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("CarBean.xml");
         Car car = (Car) context.getBean("car");
         System.out.println(1);
+    }
+
+    @Test
+    void circleDependencyConstructorTest(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("CircleDepenConstructorBean.xml");
+        TestA testA = (TestA) context.getBean("testA");
+        System.out.println(1);
+    }
+
+    @Test
+    void optionalTest(){
+        // Common condition.
+//        Map<String, Object> body = new HashMap<>();
+//        body.put("status", "1");
+
+        // Special condition1
+//        Map<String, Object> body = null;
+
+        // Special condition1
+        Map<String, Object> body = new HashMap<>();
+//        body.put("status", "1");
+
+        String status = Optional.ofNullable(body).map(x -> (String) x.get("status")).orElse("0");
+        System.out.println(status);
+    }
+
+    @Test
+    void hashMapAddAllTest(){
+
+        HashMap<String, String> parent = new HashMap<>();
+        HashMap<String, String> child = new HashMap<>();
+        child.put("name", "yyc");
+        child.put("age", "25");
+        parent.putAll(child);
+
+        System.out.println(parent);
+
     }
 }
