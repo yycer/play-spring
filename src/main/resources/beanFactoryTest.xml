@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="myTestBean" class="com.frankie.demo.beans.MyTestBean">
-        <meta key="metaKey" value="metaVal"/>
+        <meta key="testKey" value="testValue"/>
     </bean>
 
 </beans>
