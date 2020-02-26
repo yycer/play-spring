@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
+import sun.net.www.http.HttpClient;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -128,9 +129,10 @@ class DemoApplicationTests {
 
     @Test
     void factoryMethodTest(){
-        ApplicationContext context = new ClassPathXmlApplicationContext("StudentBean.xml");
-        Student student = (Student) context.getBean("student");
-        System.out.println(student.getName());
+//        ApplicationContext context = new ClassPathXmlApplicationContext("StudentBean.xml");
+//        Student student = (Student) context.getBean("student");
+//        System.out.println(student.getName());
+
     }
 
     @Test
@@ -142,5 +144,10 @@ class DemoApplicationTests {
     @Test
     void dependsOnTest(){
         ApplicationContext context = new ClassPathXmlApplicationContext("DependsOnBean.xml");
+    }
+
+    @Test
+    void ipTest(){
+
     }
 }
