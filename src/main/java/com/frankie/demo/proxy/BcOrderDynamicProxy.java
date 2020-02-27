@@ -18,9 +18,9 @@ public class BcOrderDynamicProxy implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         beforeCreateOrder();
-        Object invokedObject = method.invoke(bcOrder, args);
+        Object methodRet = method.invoke(bcOrder, args);
         afterCreateOrder();
-        return invokedObject;
+        return methodRet;
     }
 
     public void beforeCreateOrder(){

@@ -6,9 +6,9 @@ package com.frankie.demo.proxy;
  */
 public class BcOrder implements Order{
 
-
     @Override
     public void createOrder() {
         System.out.println("Created BC Order.");
+//        return "Created BC Order.";
     }
 }
