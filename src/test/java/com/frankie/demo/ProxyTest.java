@@ -63,8 +63,5 @@ public class ProxyTest {
         LocalDateTime end = LocalDateTime.now();
         // cost 65000000 ns.
         System.out.println("cost " + Duration.between(start, end).toNanos() + " ns.");
-
-//        BcOrder bcOrder1 = new BcOrder();
-        Order bcOrder1 = new BcOrder();
     }
 }
