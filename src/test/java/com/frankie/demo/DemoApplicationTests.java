@@ -5,13 +5,11 @@ import com.frankie.demo.beans.ShowMeBean;
 import com.frankie.demo.pojos.*;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
-import sun.net.www.http.HttpClient;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,7 +25,7 @@ class DemoApplicationTests {
 
     @Test
     public void beanTest(){
-        ClassPathResource resource = new ClassPathResource("/beanFactoryTest.xml");
+        ClassPathResource resource = new ClassPathResource("/BeanFactoryTest.xml");
         XmlBeanFactory xmlBeanFactory = new XmlBeanFactory(resource);
         MyTestBean myTestBean = (MyTestBean) xmlBeanFactory.getBean("myTestBean");
         Assert.assertEquals(myTestBean.getTest(), "test");

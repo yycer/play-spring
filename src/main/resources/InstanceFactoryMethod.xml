@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="instanceCarFactory" class="com.frankie.demo.beanTags.CarInstanceFactory">
+        <property name="carMap">
+            <map>
+                <entry key="6">
+                    <bean class="com.frankie.demo.beanTags.Car">
+                        <constructor-arg name="id"    value="6"/>
+                        <constructor-arg name="name"  value="BMW"/>
+                        <constructor-arg name="price" value="40"/>
+                    </bean>
+                </entry>
+                <entry key="8">
+                    <bean class="com.frankie.demo.beanTags.Car">
+                        <constructor-arg name="id"    value="8"/>
+                        <constructor-arg name="name"  value="Mini"/>
+                        <constructor-arg name="price" value="20"/>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="BMW" factory-bean="instanceCarFactory" factory-method="getCar">
+        <constructor-arg value="6"/>
+    </bean>
+
+    <bean id="mini" factory-bean="instanceCarFactory" factory-method="getCar">
+        <constructor-arg value="8"/>
+    </bean>
+
+</beans>
