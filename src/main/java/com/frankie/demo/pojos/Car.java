@@ -13,4 +13,13 @@ public class Car {
     private String brand;
     private int    speed;
     private double price;
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "brand='" + brand + '\'' +
+                ", speed=" + speed +
+                ", price=" + price +
+                '}';
+    }
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="classA" class="com.frankie.demo.circleDependency.ClassA">
+        <constructor-arg name="b" ref="classB"/>
+    </bean>
+
+    <bean id="classB" class="com.frankie.demo.circleDependency.ClassB">
+        <constructor-arg name="c" ref="classC"/>
+    </bean>
+
+    <bean id="classC" class="com.frankie.demo.circleDependency.ClassC">
+        <constructor-arg name="a" ref="classA"/>
+    </bean>
+</beans>

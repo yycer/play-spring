@@ -79,7 +79,7 @@ class DemoApplicationTests {
     void factoryBeanTest(){
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("CarBean.xml");
         Car car = (Car) context.getBean("car");
-        System.out.println(1);
+        System.out.println(car);
     }
 
     @Test

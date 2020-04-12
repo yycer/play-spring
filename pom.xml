@@ -59,6 +59,13 @@
             <version>3.3.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>5.2.5.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
     <build>
